@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const FitWeightApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FitWeightApp extends StatelessWidget {
+  const FitWeightApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Fit Weight App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'scan_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,23 +7,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Domů')),
+      appBar: AppBar(title: const Text("Fit Weight App")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {
-                // sem později dáme skenování
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ScanScreen()),
+                );
               },
-              child: const Text('📷 Naskenovat osu a kotouče'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // sem později dáme kameru s obrysem
-              },
-              child: const Text('📏 Vyfotit osu s vahou'),
+              icon: const Icon(Icons.camera_alt),
+              label: const Text("Vyfotit osu a spočítat váhu"),
             ),
           ],
         ),
